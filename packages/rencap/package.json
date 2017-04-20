@@ -1,0 +1,27 @@
+{
+  "name": "rencap",
+  "version": "1.0.0",
+  "description": "Rencap main package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sospedra/rencap.git"
+  },
+  "keywords": [
+    "rencap"
+  ],
+  "author": "Ruben Sospedra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sospedra/rencap/issues"
+  },
+  "homepage": "https://github.com/sospedra/rencap#readme",
+  "dependencies": {
+    "rencap.button": "^1.0.0",
+    "rencap.themer": "^1.0.0",
+    "rencap.view": "^1.0.0"
+  }
+}
