@@ -1,4 +1,6 @@
-export default (theme) => ({
+import template from './template'
+
+export default (theme = template) => ({
   expand: {
     flex: 1,
   },

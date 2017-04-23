@@ -3,6 +3,11 @@ import React from 'react'
 import classes from './classes'
 import template from './template'
 
+export {
+  classes,
+  template,
+}
+
 class RencapThemer extends React.Component {
   getChildContext () {
     return {
@@ -12,11 +17,9 @@ class RencapThemer extends React.Component {
   }
 
   render () {
-    return React.Children.only(this.props.children)
+    return this.props.children
   }
 }
-
-Themer.rencap = { template }
 
 Themer.childPropTypes = {
   theme: React.PropTypes.object,

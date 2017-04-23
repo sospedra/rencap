@@ -1,5 +1,6 @@
 import React from 'react'
 import isString from 'lodash.isString'
+import RencapCore from 'rencap.core'
 import {
   TouchableHighlight,
   TouchableOpacity,
@@ -8,15 +9,14 @@ import {
 
 import stylesFactory from './styles'
 
-class RencapButton = ({ children, opacity }, { classes, theme }) => {
+class RencapButton = ({ children, opacity }, { styles, theme }) => {
   const activeOpacity = Number.isFloat(opacity) ? opacity : theme.opacity
   const isHighlightButton = (opacity === undefined || opacity === false)
-  const styles = stylesFactory(theme, classes)
   const Touchable = isHighlightButton ? TouchableHighlight : TouchableOpacity
   const Children = isString(children) ? <Text>{children}</Text> : children
   const Content = React.Children.toArray(Children).map((child) => {
     return React.cloneElement(Content, {
-      style: [classes.text, Content.props && Content.props.style],
+      style: [classes.text, Children.props && Children.props.style],
     })
   })
 
@@ -53,3 +53,5 @@ RencapButton.propTypes = {
     React.PropTypes.object,
   ])
 }
+
+export default RencapCore(stylesFactory)(RencapButton)
